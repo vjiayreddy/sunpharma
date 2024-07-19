@@ -1,6 +1,8 @@
 import { AuthOptions } from "next-auth";
 import CognitoProvider from "next-auth/providers/cognito";
-
+const COGNITO_CLIENT_ID="5ufh9i8469j1dntl0ur666goob"
+const COGNITO_CLIENT_SECRET="1jpdmhhdjpspm34dvebljvo4nk6l9c0sl92oe3t3ng10gbe7t8jp"
+const COGNITO_ISSUER="https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_p7r8IXIDm"
 const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
@@ -8,9 +10,9 @@ const authOptions: AuthOptions = {
   },
   providers: [
     CognitoProvider({
-      clientId: process.env.COGNITO_CLIENT_ID,
-      clientSecret: process.env.COGNITO_CLIENT_SECRET,
-      issuer: process.env.COGNITO_ISSUER,
+      clientId: COGNITO_CLIENT_ID,
+      clientSecret: COGNITO_CLIENT_SECRET,
+      issuer: COGNITO_ISSUER,
     }),
     // CredentialsProvider({
     //   name: "Credentials",
