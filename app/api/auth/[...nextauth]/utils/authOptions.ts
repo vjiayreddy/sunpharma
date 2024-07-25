@@ -3,6 +3,7 @@ import CognitoProvider from "next-auth/providers/cognito";
 const COGNITO_CLIENT_ID="5ufh9i8469j1dntl0ur666goob"
 const COGNITO_CLIENT_SECRET="1jpdmhhdjpspm34dvebljvo4nk6l9c0sl92oe3t3ng10gbe7t8jp"
 const COGNITO_ISSUER="https://cognito-idp.eu-north-1.amazonaws.com/eu-north-1_p7r8IXIDm"
+const NEXT_PUBLIC_AUTH_SECRET ="8YR2qj4b4yqzp3YLto4nYLFSmKL0EcAw"
 const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
@@ -82,7 +83,7 @@ const authOptions: AuthOptions = {
     //   },
     // }),
   ],
-  secret: process.env.NEXT_PUBLIC_AUTH_SECRET,
+  secret: NEXT_PUBLIC_AUTH_SECRET,
   // callbacks: {
   //   jwt: async ({ token, user, trigger, session }) => {
   //     if (user) {
